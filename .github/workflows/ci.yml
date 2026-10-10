@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ ____ ]            # 1. your default branch
+    branches: [ branchType ]            # 1. your default branch
   pull_request:
 
 permissions:
@@ -27,8 +27,8 @@ jobs:
 
       # 4. set up YOUR language - see the table below.
       #    Delete this step if you need nothing beyond what the runner has.
-      - uses: ____
+      - uses: actions/setup-python@v5
         with:
-          ____
+          python-version: "3.x"
 
       - run: python -m pip install requests && bash scripts/test.sh                  # 5. the ONE command that runs your tests
